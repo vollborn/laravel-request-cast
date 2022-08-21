@@ -6,14 +6,14 @@ For example:
 If you build an API and validate a request parameter as int, the value attached to the request object can still be a string.
 It only validates the content, but does not change its data type.
 
-This JSON body would result as a string in your controller, because it is a string in the request itself too:
+This JSON body would resolute as a string in your controller, because it is a string in the request itself too:
 ```json
 {
     "integer": "1251"
 }
 ```
 
-This package aims to fix this inconvenience. The same request will result as an int in your controller, if used correctly.
+This package aims to fix this inconvenience. The same request will resolute as an int in your controller, if used correctly.
 
 ## Installation
 
@@ -31,11 +31,11 @@ There are two ways of using this package.
 1. Use it as an extended class
 2. or as a trait if you need to extend something else.
 
-Both will work the same way, just a different writing style.
+Both will work the same way, they are just different writing styles.
 
 ### Using a parent class
 
-This is Laravels default request.
+This is Laravel's default request.
 ```php
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -44,7 +44,7 @@ class TestRequest extends FormRequest
     ...
 ```
 
-We change the extended class, and should be up and running!
+Once we change the extended class, we should be up and running!
 ```php
 use Vollborn\LaravelRequestCast\Classes\CastedRequest;
 
@@ -116,13 +116,13 @@ CastTypes::ARRAY
 ```
 
 **Please note:**
-<br />Casted values can be null. For example: if you cast to a boolean, the value can be *true*, *false* OR *null*.
+<br />Casted values can be null. For example: If you cast to a boolean, the value can be *true*, *false* OR *null*.
 <br />This is supposed to be like that. If the value is null, your validation / rules will check if it is valid or not.
 
 
 ## Examples
 
-Here are some example requests using casts. Feel free to copy and try it out!
+Here are some example requests using casts. Feel free to copy them and try it out!
 
 ### Using a parent class
 
